@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="theme-color" content="#712cf9" />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>Urban Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="index.css" rel="stylesheet" />
+</head>
+
+<body class="bg-black">
+
+    <section
+        class="container-fluid intro d-flex flex-column align-items-start gap-1 justify-content-center text-white mt-0">
+        <div class="opacity-container opacity-50 position-absolute start-0 m-0"></div>
+        <i class="bi bi-shop fs-1 mb-2 z-1 fw-bolder ms-4"></i>
+        <span class="fs-1 z-1 fw-bolder ms-4">Urban</span>
+        <span class="fs-1 z-1 fw-bolder ms-4">Store</span>
+        <p class="z-1 ms-4">Streetwear essentials for the modern city</p>
+        <button type="button" class="btn btn-light z-1 ms-4" id="shoppingBtn">Shop Now <i
+                class="bi bi-arrow-right"></i></button>
+    </section>
+
+    <section class="collection container-fluid bg-black text-white p-4 mt-4">
+        <h2 class="p-2 fs-1">Collections</h2>
+        <div class="row d-flex gap-4 ms-4 ps-4">
+            <div class="col-3 d-flex flex-column ms-4">
+                <img src="https://eu.alpinestars.com/cdn/shop/files/1216-53000_1420_CYPHER_HOODIE_FR_3X4_31331dc1-3d55-4d74-b6f3-e2693daed40b.jpg?v=1773766874&width=768"
+                    height="350" alt="pic 1" />
+                <span class="d-flex justify-content-between">
+                    <h4>Hoodies</h4>
+                    <p class="mt-2">Urban edge</p>
+                </span>
+            </div>
+            <div class="col-3 d-flex flex-column ms-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2H8kUk_VAd9ICWb9SS0uIC6_GEjOoNw4bPg&s"
+                    height="350" alt="pic 1" />
+                <span class="d-flex justify-content-between">
+                    <h4>T-Shirts</h4>
+                    <p class="mt-2">Urban edge</p>
+                </span>
+            </div>
+            <div class="col-3 d-flex flex-column ms-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0jI8MBEK8IdeuePqIDQ_iMb1ThH6t53SRZw&s"
+                    height="350" alt="pic 1" />
+                <span class="d-flex justify-content-between">
+                    <h4>Pants</h4>
+                    <p class="mt-2">Urban edge</p>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="built-street container-fluid bg-black text-white d-flex justfy-content-center align-items-center">
+        <div class="row d-flex">
+            <div class="col-6 d-flex flex-column justify-content-center align-items-start">
+                <h1 class="">Built for the street</h1>
+                <p>Every piece is designed for those who move through the city with purpose and style.</p>
+            </div>
+            <div class="col-6 ps-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuqWak7o1FOjk9sXuu8nxK6EYV3AHersM3gw&s"
+                    alt="pic 4" height="350" />
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="shop container-fluid border-bottom bg-black text-white d-flex flex-column justify-content-center align-items-center">
+        <h1 class="mb-4">Start Shopping</h1>
+        <p class="mb-3">Discover your next essential piece</p>
+        <button type="button" class="btn btn-light" id="products">View Products <i
+                class="bi bi-arrow-right"></i></button>
+    </section>
+
+    <section class="container-fluid bg-black text-white d-flex justify-content-between align-items-center p-2">
+        <div class="">
+            <i class="bi bi-shop fs-3 pe-3"></i>
+            <span class="fs-4">Urban</span>
+            <span class="fs-4">Store</span>
+        </div>
+
+        <div class="">
+            <p class="">© 2026 Urban Store. All rights reserved</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

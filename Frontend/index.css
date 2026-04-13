@@ -1,0 +1,30 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+}
+
+/* Sections styles */
+.intro {
+  background-image: url(https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2017%2F05%2Fbest-streetstyle-fashion-outfits-instagram-week-4-1.jpg?q=75&w=800&cbr=1&fit=max);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.opacity-container {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+}
+.collection{
+  height: 40vw;
+} 
+.shop {
+  height: 20vw;
+}
+.built-street {
+  width: 60%;
+  height: 45vw;
+}
