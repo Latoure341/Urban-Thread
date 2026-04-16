@@ -1,5 +1,5 @@
 import { db } from "./firebase.js";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
 
 // Add
 // Read
@@ -8,7 +8,6 @@ export async function fetchData() {
   const items = [];
 
   querySnapshot.forEach((doc) => {
-    console.log(doc.id, ":", doc.data());
     items.push({ id: doc.id, ...doc.data() });
   });
 
