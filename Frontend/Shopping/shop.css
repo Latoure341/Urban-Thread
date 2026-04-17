@@ -109,3 +109,12 @@
 .product-btn:hover {
     background: #333;
 }
+
+/* Filter product style */
+.filtered {
+    display: none;
+}
+.filterBtn {
+    background-color: white !important;
+    color: black !important;
+}

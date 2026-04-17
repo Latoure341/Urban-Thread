@@ -1,5 +1,20 @@
 import { fetchData } from "../../FireBase/database.js";
 
+const countElement = document.querySelector(".productCount");
+const productNumber = document.querySelector(".productNumb");
+// Product count
+let productCount = 0;
+let cartProducts = 0;
+let cartProduct = [];
+
+// Filter buttons selection
+const allProductsBtn = document.querySelector(".all-products");
+const hoodiesBtn = document.querySelector(".hoodiesBtn");
+const tShirtsBtn = document.querySelector(".t-shirtsBtn");
+const PantsBtn = document.querySelector(".PantsBtn"); 
+
+const buttonList = [hoodiesBtn, tShirtsBtn, PantsBtn];
+
 async function initShop() {
   try {
     const data = await fetchData();
@@ -52,16 +67,75 @@ async function initShop() {
 
       heading.innerHTML = item.name;
       description.innerHTML = item.Description;
+      productSpan.dataset.category = item.category || "";
       price.innerHTML = item.price;
       productImg.setAttribute("src", item.image);
+    
 
       appendElements();
+      productCount += 1;
 
-      console.log(price.innerHTML);
+      // Adding product to cart
+      cartBtn.addEventListener("click", ()=> {
+        cartProducts += 1;
+        productNumber.innerHTML = cartProducts;
+        cartProduct.push(item);
+      })
+
     });
+    countElement.innerHTML = productCount;
+    
+    // Filtering the products
+    function updateButtonStyles(activeBtn) {
+      const allButtons = [allProductsBtn, ...buttonList];
+      allButtons.forEach(btn => {
+        if (btn === activeBtn) {
+          btn.classList.remove("btn-dark", "bg-black");
+          btn.classList.add("btn-light");
+        } else {
+          btn.classList.add("btn-dark", "bg-black");
+          btn.classList.remove("btn-light");
+        }
+      });
+    }
+
+    function filterProducts(category) {
+      const productCards = document.querySelectorAll(".product-card");
+      let visibleCount = 0;
+
+      productCards.forEach(card => {
+        const isMatch = category === "All Products" || card.dataset.category === category;
+        card.style.display = isMatch ? "" : "none";
+        if (isMatch) visibleCount += 1;
+      });
+
+      countElement.innerHTML = visibleCount;
+    }
+
+    buttonList.forEach(button => {
+      button.addEventListener("click", () => {
+        const category = button.textContent.trim();
+        filterProducts(category);
+        updateButtonStyles(button);
+      });
+    });
+
+    allProductsBtn.addEventListener("click", () => {
+      filterProducts("All Products");
+      updateButtonStyles(allProductsBtn);
+    });
+
+    // Cart EventListener
+    const cart = document.querySelector(".cart");
+    cart.addEventListener("click", ()=> {
+      console.log("Navigating to the cart page");
+    })
   } catch (error) {
     console.error("Failed to fetch shop data:", error);
   }
 }
 
+
+//function execution
 initShop();
+
