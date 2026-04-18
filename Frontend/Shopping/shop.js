@@ -1,11 +1,11 @@
 import { fetchData } from "../../FireBase/database.js";
+import { addToCart, getCartCount } from "../Cart/cartModule.js";
 
 const countElement = document.querySelector(".productCount");
 const productNumber = document.querySelector(".productNumb");
 // Product count
 let productCount = 0;
 let cartProducts = 0;
-let cartProduct = [];
 
 // Filter buttons selection
 const allProductsBtn = document.querySelector(".all-products");
@@ -79,7 +79,7 @@ async function initShop() {
       cartBtn.addEventListener("click", ()=> {
         cartProducts += 1;
         productNumber.innerHTML = cartProducts;
-        cartProduct.push(item);
+        addToCart(item);
       })
 
     });
@@ -138,4 +138,3 @@ async function initShop() {
 
 //function execution
 initShop();
-

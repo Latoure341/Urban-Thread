@@ -1,1 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+.cart {
+  cursor: pointer;
+}
+.cart-title {
+  margin: 10rem auto auto 2rem;
+}
