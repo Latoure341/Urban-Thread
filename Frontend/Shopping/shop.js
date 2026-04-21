@@ -1,8 +1,9 @@
 import { fetchData } from "../../FireBase/database.js";
-import { addToCart, getCartCount } from "../Cart/cartModule.js";
+import { addToCart } from "../Cart/cartModule.js";
 
 const countElement = document.querySelector(".productCount");
 const productNumber = document.querySelector(".productNumb");
+
 // Product count
 let productCount = 0;
 let cartProducts = 0;
@@ -125,11 +126,19 @@ async function initShop() {
       updateButtonStyles(allProductsBtn);
     });
 
-    // Cart EventListener
+    // Page Navigation EventListenera
     const cart = document.querySelector(".cart");
+    const login = document.getElementById("login");
+    
     cart.addEventListener("click", ()=> {
-      console.log("Navigating to the cart page");
+      //Navigate to cart page
+      window.location.href = "../Cart/cart.html"
     })
+    login.addEventListener("click", ()=> {
+      //Navigate to cart page
+      window.location.href = "../Login/login.html"
+    })
+
   } catch (error) {
     console.error("Failed to fetch shop data:", error);
   }

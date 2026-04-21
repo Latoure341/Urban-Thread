@@ -1,5 +1,6 @@
 
 const STORAGE_KEY = "cart";
+let cart = [];
 
 // Get cart from localStorage
 function getCart() {
@@ -22,21 +23,20 @@ function saveCart(cart) {
 
 // Add item to cart
 function addToCart(item) {
-  const cart = getCart();
   cart.push(item);
   saveCart(cart);
 }
 
 // Remove item (optional)
-function removeFromCart(index) {
-  const cart = getCart();
-  cart.splice(index, 1);
-  saveCart(cart);
-}
+// function removeFromCart(index) {
+//   const cart = getCart();
+//   cart.splice(index, 1);
+//   saveCart(cart);
+// }
 
-// Get total count
-function getCartCount() {
-  return getCart().length;
-}
+// // Get total count
+// function getCartCount() {
+//   return getCart().length;
+// }
 
-export { addToCart, getCart, removeFromCart, getCartCount };
+export { addToCart, getCart };
