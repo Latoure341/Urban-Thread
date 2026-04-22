@@ -1,5 +1,5 @@
 import { fetchData } from "../../FireBase/database.js";
-import { addToCart } from "../Cart/cartModule.js";
+import { addToCart, getCartCount } from "../Cart/cartModule.js";
 
 const countElement = document.querySelector(".productCount");
 const productNumber = document.querySelector(".productNumb");
@@ -74,14 +74,15 @@ async function initShop() {
     
 
       appendElements();
-      productCount += 1;
 
       // Adding product to cart
       cartBtn.addEventListener("click", ()=> {
-        cartProducts += 1;
-        productNumber.innerHTML = cartProducts;
         addToCart(item);
+        cartProducts = getCartCount();
+        productNumber.innerHTML = cartProducts;
+        
       })
+      
 
     });
     countElement.innerHTML = productCount;

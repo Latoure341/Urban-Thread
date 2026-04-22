@@ -34,9 +34,9 @@ function addToCart(item) {
 //   saveCart(cart);
 // }
 
-// // Get total count
-// function getCartCount() {
-//   return getCart().length;
-// }
+// Get total count
+function getCartCount() {
+  return getCart().length;
+}
 
-export { addToCart, getCart };
+export { addToCart, getCart, getCartCount };

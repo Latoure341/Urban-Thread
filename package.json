@@ -15,7 +15,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "build": "esbuild Frontend/index.js --bundle --minify --outfile=dist/bundle.js"
   },
   "dependencies": {
     "ansi-regex": "^5.0.1",
@@ -47,5 +48,8 @@
     "y18n": "^5.0.8",
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.0"
   }
 }
