@@ -118,9 +118,10 @@ function initializePage() {
           const orderSummary = document.getElementById("order-summary");
           const emmptyCart = document.createElement("h1");
           emmptyCart.innerHTML = "Your Cart Is Empty";
+          emmptyCart.classList.add("container-fluid", "d-flex", "Justify-content-center", "p-5", "fs-1")
 
-          bigContainer.appendChild(emmptyCart);
-          orderSummary.style.display = "none";
+          bigContainer.prepend(emmptyCart);
+          orderSummary.classList.add("d-none");
 
      }
 }

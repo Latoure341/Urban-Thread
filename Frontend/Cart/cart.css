@@ -3,7 +3,7 @@
   cursor: pointer;
 }
 .cart-title {
-  margin: 10rem auto auto 2rem;
+  margin: 8rem auto auto 2rem;
 }
 
 .productImg {
@@ -13,5 +13,5 @@
 }
 
 #item-container {
-  width: 45vw;
+  width: 100%;
 }

@@ -4,5 +4,15 @@
   cursor: pointer;
 }
 .checkout-title {
-  margin: 10rem auto auto 2rem;
+  margin: 8rem auto auto 2rem;
+}
+.order-summary {
+  height: 100vh !important;
+}
+@media (min-width: 768px) {
+
+  .information-container {
+    width: 50% !important;
+  }
+  
 }
