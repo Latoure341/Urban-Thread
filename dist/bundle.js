@@ -1,1 +1,0 @@
-(()=>{var t=document.getElementById("shoppingBtn"),n=document.getElementById("products");t.addEventListener("click",()=>{window.location.href="./Shopping/shop.html"});n.addEventListener("click",()=>{window.location.href="./Shopping/shop.html"});})();
