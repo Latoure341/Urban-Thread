@@ -1,12 +1,22 @@
 import { fetchData } from "../../FireBase/database.js";
-import { addToCart, getCartCount } from "../Cart/cartModule.js";
+import { authenticate } from "../../FireBase/auth.js";
+import { addToCart, getCartCount, getCart } from "../Cart/cartModule.js";
 
+//Element selection
 const countElement = document.querySelector(".productCount");
 const productNumber = document.querySelector(".productNumb");
+const cart = document.querySelector(".cart");
+const login = document.getElementById("login");
+
+// User
+const user = JSON.parse(localStorage.getItem("user"));
 
 // Product count
 let productCount = 0;
-let cartProducts = 0;
+
+// Cart products already there
+let cartProducts = getCart().length;
+let cartProductCount = cartProducts;
 
 // Filter buttons selection
 const allProductsBtn = document.querySelector(".all-products");
@@ -17,8 +27,17 @@ const PantsBtn = document.querySelector(".PantsBtn");
 const buttonList = [hoodiesBtn, tShirtsBtn, PantsBtn];
 
 async function initShop() {
+  if(user){
+    const accountIcon = document.createElement("i");
+    accountIcon.classList.add("bi", "bi-person", "fs-3");
+    login.appendChild(accountIcon);
+  } else {
+    login.innerHTML = "LogIn"
+  }
+
   try {
     const data = await fetchData();
+
     data.forEach((item) => {
 
       //Select elements from html file
@@ -74,16 +93,28 @@ async function initShop() {
     
 
       appendElements();
-
-      // Adding product to cart
-      cartBtn.addEventListener("click", ()=> {
-        addToCart(item);
-        cartProducts = getCartCount();
-        productNumber.innerHTML = cartProducts;
-        
-      })
+      productCount += 1
       
+      if (user) {
+        // Adding product to cart
+        cartBtn.addEventListener("click", () => {
+          addToCart(item);
+          cartProductCount += 1;
+          productNumber.innerHTML = cartProductCount;
+        });
 
+        productNumber.innerHTML = cartProductCount;
+      }
+      else{
+        cartBtn.addEventListener("click", ()=> {
+          alert("Log into your account")
+        })
+      }
+      
+      
+      
+      
+      
     });
     countElement.innerHTML = productCount;
     
@@ -127,17 +158,25 @@ async function initShop() {
       updateButtonStyles(allProductsBtn);
     });
 
-    // Page Navigation EventListenera
-    const cart = document.querySelector(".cart");
-    const login = document.getElementById("login");
+   
     
     cart.addEventListener("click", ()=> {
       //Navigate to cart page
-      window.location.href = "../Cart/cart.html"
+      if(user){
+        window.location.href = "../Cart/cart.html";
+      } else {
+        window.location.href = "../Login/login.html";
+      }
     })
     login.addEventListener("click", ()=> {
       //Navigate to cart page
-      window.location.href = "../Login/login.html"
+      if(user){
+        localStorage.removeItem("user");
+        window.location.href = "../index.html";
+      } else {
+        window.location.href = "../Login/login.html"
+      }
+      
     })
 
   } catch (error) {

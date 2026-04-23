@@ -1,4 +1,4 @@
-import { getCart, getCartCount } from "./cartModule.js";
+import { getCart, getCartCount, removeFromCart } from "./cartModule.js";
 
 //Buttons for navigation
 const checkoutBtn = document.getElementById("checkoutBtn");
@@ -75,6 +75,12 @@ function initializePage() {
 
                // Adding price tot eh subtotal
                subTotal = subTotal + item.price;
+
+               // Removing item
+               deleteIcon.addEventListener("click", ()=> {
+                    removeFromCart(item.name);
+                    location.reload();
+               });
           });
           const itemCount = document.querySelector(".itemCount");
           itemCount.innerHTML = getCartCount();

@@ -1,6 +1,9 @@
 
 const STORAGE_KEY = "cart";
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart'));
+if(cart === null){
+  cart = [];
+}
 
 // Get cart from localStorage
 function getCart() {
@@ -28,15 +31,15 @@ function addToCart(item) {
 }
 
 // Remove item (optional)
-// function removeFromCart(index) {
-//   const cart = getCart();
-//   cart.splice(index, 1);
-//   saveCart(cart);
-// }
+function removeFromCart(name) {
+  const cart = getCart();
+  const remainingItems = cart.filter(item => item.name != name);
+  saveCart(remainingItems);
+}
 
 // Get total count
 function getCartCount() {
   return getCart().length;
 }
 
-export { addToCart, getCart, getCartCount };
+export { addToCart, getCart, getCartCount, removeFromCart };

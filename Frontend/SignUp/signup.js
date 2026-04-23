@@ -36,7 +36,6 @@ signupBtn.addEventListener("click", async () => {
 
   try {
     const userCredential = await signup(email, password);
-    console.log("User created:", userCredential.user);
 
     // Redirect after success
     window.location.href = "../Login/login.html";
