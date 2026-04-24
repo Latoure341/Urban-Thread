@@ -5,6 +5,28 @@ body {
   min-height: 100vh;
 }
 
+/* Loader */
+.loader-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e5e7eb;      /* light gray */
+  border-top: 5px solid #22c55e;  /* green accent */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  margin: 100px auto; /* center it */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Intro Section */
 .intro {
   background-image: url(https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2017%2F05%2Fbest-streetstyle-fashion-outfits-instagram-week-4-1.jpg?q=75&w=800&cbr=1&fit=max);

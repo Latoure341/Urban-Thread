@@ -8,14 +8,19 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="theme-color" content="#712cf9" />
     <meta name="generator" content="Astro v5.13.2" />
-    <title>Urban Store</title>
+    <title>Urban Thread</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link href="index.css" rel="stylesheet" />
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20190917/ourmid/pngtree-store-icon-in-line-style-png-image_1736161.jpg"/>
 </head>
 
 <body class="bg-black">
+    <div class="loader-container position-absolute top-50 start-50 translate-middle z-3">
+        <div class="loader position-relative top-50 start-10 translate-middle">
+        </div>
+    </div>
 
     <section class="container-fluid intro d-flex flex-column justify-content-center text-white">
         <div class="opacity-container"></div>
@@ -35,24 +40,24 @@
             <h2 class="fs-1 mb-4">Collections</h2>
 
             <div class="row">
-                <div class="col-md-4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6mb6INm-cVePyvCLtE1c-Kyy-socPHwnQnw&s" alt="Hoodies" />
+                <div class="image-container1 col-md-4">
+                    
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <h4>Hoodies</h4>
                         <p class="mt-2">Premium Comfort</p>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <img src="https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/180221s.jpg?im=Resize,width=750" alt="T-Shirts" />
+                <div class="image-container2 col-md-4">
+                    
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <h4>T-Shirts</h4>
                         <p class="mt-2">Essential basics</p>
                     </div>
                 </div>
 
-                <div class="col-md-3">
-                    <img src="https://cdn.shopify.com/s/files/1/0423/3576/4634/files/parachute_pants.webp" alt="Pants" />
+                <div class="image-container3 col-md-3">
+                    
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <h4>Pants</h4>
                         <p class="mt-2">Urban edge</p>
@@ -70,8 +75,8 @@
                     <p>Every piece is designed for those who move through the city with purpose and style.</p>
                 </div>
 
-                <div class="col-md-6">
-                    <img src="https://www.gornation.com/cdn/shop/files/product-photo-front-black_66ecd1c9-511c-403b-abd8-007f5b70f3d2_1800x.jpg?v=1761920942" alt="Streetwear" />
+                <div class="image-container4 col-md-6">
+        
                 </div>
             </div>
         </div>
@@ -90,7 +95,7 @@
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
             <div>
                 <i class="bi bi-shop fs-3 me-2"></i>
-                <span class="fs-4">Urban Store</span>
+                <span class="fs-4">Urban Thread</span>
             </div>
 
             <p class="mb-0 mt-2 mt-md-0">© 2026 Urban Store. All rights reserved</p>
@@ -100,7 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
