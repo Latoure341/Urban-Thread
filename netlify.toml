@@ -1,4 +1,5 @@
 [[redirects]]
+
+publish = "Frontend" 
 from = "/*"
 to = "/Frontend/index.html"
-status = 200
