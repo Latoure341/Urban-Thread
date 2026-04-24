@@ -14,5 +14,15 @@ export async function fetchData() {
   return items;
 }
 
+export async function fetchImages(){
+  const querySnapshot = await getDocs(collection(db, "LandingPageImages"));
+  const items = [];
+
+  querySnapshot.forEach((doc) => {
+    items.push({ id: doc.id, ...doc.data() });
+  });
+
+  return items;
+}
 // Update
 // Delete

@@ -7,6 +7,8 @@ const countElement = document.querySelector(".productCount");
 const productNumber = document.querySelector(".productNumb");
 const cart = document.querySelector(".cart");
 const login = document.getElementById("login");
+const loader = document.querySelector(".loader");
+const loaderContainer = document.querySelector(".loader-container");
 
 // User
 const user = JSON.parse(localStorage.getItem("user"));
@@ -25,6 +27,16 @@ const tShirtsBtn = document.querySelector(".t-shirtsBtn");
 const PantsBtn = document.querySelector(".PantsBtn"); 
 
 const buttonList = [hoodiesBtn, tShirtsBtn, PantsBtn];
+
+function loadData() {
+  loaderContainer.style.display = "block";
+
+  setTimeout(() => {
+    loaderContainer.style.display = "none";
+  }, 2000);
+}
+
+window.addEventListener("load", loadData);
 
 async function initShop() {
   if(user){
