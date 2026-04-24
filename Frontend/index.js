@@ -1,4 +1,4 @@
-import { fetchImages } from "../Firebase/database.js";
+import { fetchImages } from "../FireBase/database.js";
 
 const shopBtn = document.getElementById("shoppingBtn");
 const productBtn = document.getElementById("products");
