@@ -21,11 +21,3 @@ export const login = async (email, password) => {
     alert("Invalid");
   });
 };
-
-export const authenticate = () => {
-   onAuthStateChanged(auth, user => {
-    if (!user) {
-      window.location.href = "../Login/login.html";
-    }
-  });
-};
